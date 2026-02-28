@@ -2,7 +2,7 @@ import SwiftUI
 
     // MARK: Slide View
 @available(iOS 26.0, *)
-struct MGOnboardingKitSlideView: View {
+public struct MGOnboardingKitSlideView: View {
     let item: MGOnboardingItem
     let isLast: Bool
     let nextButtonTitle: String
@@ -13,7 +13,7 @@ struct MGOnboardingKitSlideView: View {
     
     @State private var anim: [CGFloat] = [0.6, 0, 24, 0, 20, 0] // Scale, Opacity, Offsets
     
-    var body: some View {
+    public var body: some View {
         ZStack {
             if #available(iOS 14.0, *) {
                 Color(red: 0.05, green: 0.05, blue: 0.12).ignoresSafeArea()
@@ -66,10 +66,10 @@ struct MGOnboardingKitSlideView: View {
 
     // MARK: Components
 @available(iOS 26.0, *)
-struct OnboardingLogo: View {
+public struct OnboardingLogo: View {
     let item: MGOnboardingItem
     var scale: CGFloat; var opacity: Double
-    var body: some View {
+    public var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: item.logoCornerRadius, style: .continuous)
                 .fill(LinearGradient(colors: item.logoGradientColors, startPoint: .topLeading, endPoint: .bottomTrailing))
@@ -81,27 +81,27 @@ struct OnboardingLogo: View {
 }
 
 @available(iOS 26.0, *)
-struct OnboardingTitle: View {
+public struct OnboardingTitle: View {
     let item: MGOnboardingItem
     var offset: CGFloat; var opacity: Double
-    var body: some View {
+    public var body: some View {
         Text(item.title).font(.largeTitle).bold().fontDesign(item.titleDesign).multilineTextAlignment(.center).foregroundStyle(item.titleColor).offset(y: offset).opacity(opacity)
     }
 }
 
 @available(iOS 26.0, *)
-struct OnboardingDescription: View {
+public struct OnboardingDescription: View {
     let item: MGOnboardingItem
     var offset: CGFloat; var opacity: Double
-    var body: some View {
+    public var body: some View {
         Text(item.description).font(.body).fontDesign(item.descriptionDesign).multilineTextAlignment(.center).foregroundColor(item.descriptionColor).frame(maxWidth: 320).offset(y: offset).opacity(opacity)
     }
 }
 
 @available(iOS 26.0, *)
-struct OnboardingButton: View {
+public struct OnboardingButton: View {
     var title: String; var icon: String; var visible: Bool; var color: Color; var opacity: Double = 1.0; var action: () -> Void
-    var body: some View {
+    public var body: some View {
         Button(action: action) {
             if visible { Label(title, systemImage: icon) } else { Text(title) }
         }.foregroundStyle(color).buttonStyle(.glassProminent).controlSize(.extraLarge).opacity(opacity)

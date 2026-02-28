@@ -2,7 +2,7 @@ import SwiftUI
 
     // MARK: (Main Container)
 @available(iOS 26.0, *)
-struct MGOnboardingKitMainView: View {
+public struct MGOnboardingKitMainView: View {
     var items: [MGOnboardingItem]
     var nextButtonTitle: String  = "Next"
     var lastButtonTitle: String  = "Start"
@@ -10,7 +10,7 @@ struct MGOnboardingKitMainView: View {
     
     @State private var currentIndex: Int = 0
     
-    var body: some View {
+    public var body: some View {
         TabView(selection: $currentIndex) {
             ForEach(0..<items.count, id: \.self) { index in
                 let item = items[index]
