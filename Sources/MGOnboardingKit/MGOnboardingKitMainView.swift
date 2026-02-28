@@ -3,10 +3,10 @@ import SwiftUI
     // MARK: (Main Container)
 @available(iOS 26.0, *)
 public struct MGOnboardingKitMainView: View {
-    var items: [MGOnboardingItem]
-    var nextButtonTitle: String  = "Next"
-    var lastButtonTitle: String  = "Start"
-    var onFinish: () -> Void
+    public var items: [MGOnboardingItem]
+    public var nextButtonTitle: String  = "Next"
+    public var lastButtonTitle: String  = "Start"
+    public var onFinish: () -> Void
     
     @State private var currentIndex: Int = 0
     
