@@ -4,11 +4,23 @@ import SwiftUI
 @available(iOS 26.0, *)
 public struct MGOnboardingKitMainView: View {
     public var items: [MGOnboardingItem]
-    public var nextButtonTitle: String  = "Next"
-    public var lastButtonTitle: String  = "Start"
+    public var nextButtonTitle: String
+    public var lastButtonTitle: String
     public var onFinish: () -> Void
     
     @State private var currentIndex: Int = 0
+    
+    public init(
+        items: [MGOnboardingItem],
+        nextButtonTitle: String = "Next",
+        lastButtonTitle: String = "Start",
+        onFinish: @escaping () -> Void
+    ) {
+        self.items = items
+        self.nextButtonTitle = nextButtonTitle
+        self.lastButtonTitle = lastButtonTitle
+        self.onFinish = onFinish
+    }
     
     public var body: some View {
         TabView(selection: $currentIndex) {
