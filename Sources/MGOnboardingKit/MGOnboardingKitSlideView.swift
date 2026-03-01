@@ -33,7 +33,12 @@ public struct MGOnboardingKitSlideView: View {
     
     public var body: some View {
         ZStack {
-            Color(red: 0.05, green: 0.05, blue: 0.12).ignoresSafeArea()
+            LinearGradient(
+                colors: item.backgroundColor,
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
             
             VStack {
                 Spacer()
