@@ -40,27 +40,21 @@ public struct MGOnboardingItem: Identifiable {
     public init(
         title: String,
         description: String,
-        logoSystemImage: String                         = "photo",
-        isLogoVisible: Bool                             = true,
-        isDescriptionVisible: Bool                      = true,
-        logoFrameSize: CGFloat                          = 100,
-        logoCornerRadius: CGFloat                       = 28,
-        logoGradientColors: [Color]                     = [
-            Color(red: 0.42, green: 0.24, blue: 0.95),
-            Color(red: 0.18, green: 0.10, blue: 0.72)
-        ],
-        logoMainColor: Color                            = .white,
-        logoBorderLineWidth: CGFloat                    = 5,
-        titleColor: Color                               = .white,
-        titleDesign: Font.Design                        = .rounded,
-        descriptionColor: Color                         = .white.opacity(0.8),
-        descriptionDesign: Font.Design                  = .rounded,
-        buttonColor: Color                              = .white,
-        nextButtonIcon: String                          = "arrow.right",
-        backgroundColor: [Color]                        = [
-            Color(red: 0.05, green: 0.05, blue: 0.12),
-            Color(red: 0.08, green: 0.04, blue: 0.18)
-        ]
+        logoSystemImage: String,
+        isLogoVisible: Bool,
+        isDescriptionVisible: Bool,
+        logoFrameSize: CGFloat,
+        logoCornerRadius: CGFloat,
+        logoGradientColors: [Color],
+        logoMainColor: Color,
+        logoBorderLineWidth: CGFloat,
+        titleColor: Color,
+        titleDesign: Font.Design,
+        descriptionColor: Color,
+        descriptionDesign: Font.Design,
+        buttonColor: Color,
+        nextButtonIcon: String,
+        backgroundColor: [Color]
     ) {
         self.title = title
         self.description = description
